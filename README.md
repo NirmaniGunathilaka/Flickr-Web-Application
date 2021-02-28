@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Flickr Feed Viewer and Search 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Simple web application that reads data from Flickr's public feeds and displays the images on the page to the user.
 
-## Available Scripts
+# Table of Contents
 
-In the project directory, you can run:
+[General Infro](#GeneralInfo)
 
-### `npm start`
+[Demo](#Demo)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Technologies](#Technologies)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[API Testing](#APITesting)
 
-### `npm test`
+[API Methods](#APIMethods)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Setup](#Setup)
 
-### `npm run build`
+## General Info
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This is an full stack application that can be used to load the public feed images of the API as a grid view and also to search images which returns from the API by giving a keyword.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Flickr API has used as the 3rd party API.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Reads the Flickr's public feed
 
-### `npm run eject`
+* Search images
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Public Feed : "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1"
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Search      : "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key="+apikey+"&tags="+value+"&format=json&nojsoncallback=1"
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Demo
 
-## Learn More
+![image](https://user-images.githubusercontent.com/36589720/109418198-187d3180-79ed-11eb-9831-d8196ce8a92f.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![image](https://user-images.githubusercontent.com/36589720/109418617-6135ea00-79ef-11eb-87e0-a122dc922c45.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![image](https://user-images.githubusercontent.com/36589720/109418433-5e86c500-79ee-11eb-95a0-04bc4f62bd6f.png)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Technologies
 
-### Making a Progressive Web App
+Frontend - Reactjs 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Backend - Nodejs/Expressjs [v10.16.3]
 
-### Advanced Configuration
+## API Testing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Jest
 
-### Deployment
+$ npm run test
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## API Methods
 
-### `npm run build` fails to minify
+api/photos       : load the public feed images
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+api/search/[tag] : returns the images which is match with the relevant tag.
+
+## Setup
+
+### Backend
+
+$ cd flickr-app
+
+$ npm install
+
+$ cd backend
+
+$ nodemon server
+
+### Frontend
+
+$ cd flickr-app
+
+$ npm install
+
+$ npm start
+
