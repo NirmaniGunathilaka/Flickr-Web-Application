@@ -4,17 +4,15 @@ Simple web application that reads data from Flickr's public feeds and displays t
 
 # Table of Contents
 
-[General Infro](#GeneralInfo)
+1.[General Infro](#GeneralInfo)
 
-[Demo](#Demo)
+2.[Demo](#Demo)
 
-[Technologies](#Technologies)
+3.[Technologies](#Technologies)
 
-[API Testing](#APITesting)
+4.[API Methods](#APIMethods)
 
-[API Methods](#APIMethods)
-
-[Setup](#Setup)
+5.[Setup](#Setup)
 
 ## General Info
 
@@ -23,10 +21,10 @@ This is an full stack application that can be used to load the public feed image
 Flickr API has used as the 3rd party API.
 
 * Reads the Flickr's public feed
-          Public Feed : "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1"
+      Public Feed URL : "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1"
           
 * Search images
-          Search : "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key="+apikey+"&tags="+value+"&format=json&nojsoncallback=1"
+      Search URL: "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key="+apikey+"&tags="+value+"&format=json&nojsoncallback=1"
 
 
 ## Demo
@@ -44,9 +42,7 @@ Flickr API has used as the 3rd party API.
 
 * Backend - Nodejs/Expressjs [v10.16.3]
 
-## API Testing
-
-Jest and Supertest
+* API Testing - Jest and Supertest
 
 ## API Methods
 
