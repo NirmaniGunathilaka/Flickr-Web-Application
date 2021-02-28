@@ -23,13 +23,11 @@ This is an full stack application that can be used to load the public feed image
 Flickr API has used as the 3rd party API.
 
 * Reads the Flickr's public feed
-
+          Public Feed : "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1"
+          
 * Search images
+          Search : "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key="+apikey+"&tags="+value+"&format=json&nojsoncallback=1"
 
-
-Public Feed : "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1"
-
-Search      : "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key="+apikey+"&tags="+value+"&format=json&nojsoncallback=1"
 
 ## Demo
 
@@ -40,25 +38,21 @@ Search      : "https://www.flickr.com/services/rest/?method=flickr.photos.search
 ![image](https://user-images.githubusercontent.com/36589720/109418433-5e86c500-79ee-11eb-95a0-04bc4f62bd6f.png)
 
 
-
-
 ## Technologies
 
-Frontend - Reactjs 
+* Frontend - Reactjs 
 
-Backend - Nodejs/Expressjs [v10.16.3]
+* Backend - Nodejs/Expressjs [v10.16.3]
 
 ## API Testing
 
-Jest
-
-$ npm run test
+Jest and Supertest
 
 ## API Methods
 
-api/photos       : load the public feed images
+* /api/photos       : load the public feed images
 
-api/search/[tag] : returns the images which is match with the relevant tag.
+* /api/search/[tag] : returns the images which is match with the relevant tag.
 
 ## Setup
 
@@ -68,6 +62,8 @@ $ cd backend
 
 $ npm install
 
+$ npm install -g nodemon
+
 $ nodemon server
 
 ### Frontend
@@ -75,4 +71,12 @@ $ nodemon server
 $ npm install
 
 $ npm start
+
+### API Testing
+
+$ cd backend
+
+$ npm install --save-dev jest
+
+$ npm run test
 
